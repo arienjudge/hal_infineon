@@ -901,6 +901,8 @@
     #include "cy8c4149azi_s543.h"
 #elif defined (CY8C4149AZI_S553)
     #include "cy8c4149azi_s553.h"
+#elif defined (CY8C4247AZI_M485)
+    #include "cy8c4247azi_m485.h"
 #elif defined (CY8C4724FNI_S402)
     #include "cy8c4724fni_s402.h"
 #elif defined (CY8C4724LQI_S401)

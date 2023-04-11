@@ -90,12 +90,12 @@ typedef enum {
 #define __CM0_REV                       0x0001U /*!< CM0PLUS Core Revision */
 #define __NVIC_PRIO_BITS                2       /*!< Number of Bits used for Priority Levels */
 #define __Vendor_SysTickConfig          0       /*!< Set to 1 if different SysTick Config is used */
-#define __VTOR_PRESENT                  1       /*!< Set to 1 if CPU supports Vector Table Offset Register */
+#define __VTOR_PRESENT                  0       /*!< Set to 1 if CPU supports Vector Table Offset Register */
 #define __MPU_PRESENT                   0       /*!< MPU present or not */
 
 /** \} Configuration_of_CMSIS */
 
-#include "core_cm0plus.h"                       /*!< ARM Cortex-M0+ processor and core peripherals */
+#include "core_cm0.h"                       /*!< ARM Cortex-M0+ processor and core peripherals */
 
 
 /* Memory Blocks */
@@ -110,67 +110,7 @@ typedef enum {
 
 #include "system_cat2.h"                        /*!< Category 2 System */
 
-/* IP List */
-#define CY_IP_ARMCM0P                   1u
-#define CY_IP_ARMCM0P_INSTANCES         0u
-#define CY_IP_ARMCM0P_VERSION           1u
-#define CY_IP_M0S8CPUSSV3               1u
-#define CY_IP_M0S8CPUSSV3_INSTANCES     1u
-#define CY_IP_M0S8CPUSSV3_VERSION       3u
-#define CY_IP_M0S8CPUSSV3_DMAC          1u
-#define CY_IP_M0S8CPUSSV3_DMAC_INSTANCES 1u
-#define CY_IP_M0S8CPUSSV3_DMAC_VERSION  3u
-#define CY_IP_M0S8CRYPTO                1u
-#define CY_IP_M0S8CRYPTO_INSTANCES      1u
-#define CY_IP_M0S8CRYPTO_VERSION        2u
-#define CY_IP_M0S8CSDV2                 1u
-#define CY_IP_M0S8CSDV2_INSTANCES       1u
-#define CY_IP_M0S8CSDV2_VERSION         2u
-#define CY_IP_M0S8EXCO                  1u
-#define CY_IP_M0S8EXCO_INSTANCES        1u
-#define CY_IP_M0S8EXCO_VERSION          1u
-#define CY_IP_M0S8IOSS                  1u
-#define CY_IP_M0S8IOSS_INSTANCES        1u
-#define CY_IP_M0S8IOSS_VERSION          1u
-#define CY_IP_M0S8IOSS_SMARTIO          1u
-#define CY_IP_M0S8IOSS_SMARTIO_INSTANCES 3u
-#define CY_IP_M0S8IOSS_SMARTIO_VERSION  1u
-#define CY_IP_M0S8LCD                   1u
-#define CY_IP_M0S8LCD_INSTANCES         1u
-#define CY_IP_M0S8LCD_VERSION           2u
-#define CY_IP_M0S8LPCOMP                1u
-#define CY_IP_M0S8LPCOMP_INSTANCES      1u
-#define CY_IP_M0S8LPCOMP_VERSION        2u
-#define CY_IP_M0S8PASS4A                1u
-#define CY_IP_M0S8PASS4A_INSTANCES      1u
-#define CY_IP_M0S8PASS4A_VERSION        1u
-#define CY_IP_M0S8PASS4A_SAR            1u
-#define CY_IP_M0S8PASS4A_SAR_INSTANCES  1u
-#define CY_IP_M0S8PASS4A_SAR_VERSION    1u
-#define CY_IP_M0S8PASS4A_CTB            1u
-#define CY_IP_M0S8PASS4A_CTB_INSTANCES  1u
-#define CY_IP_M0S8PASS4A_CTB_VERSION    1u
-#define CY_IP_M0S8PERI                  1u
-#define CY_IP_M0S8PERI_INSTANCES        1u
-#define CY_IP_M0S8PERI_VERSION          1u
-#define CY_IP_M0S8PERI_TR               1u
-#define CY_IP_M0S8PERI_TR_INSTANCES     1u
-#define CY_IP_M0S8PERI_TR_VERSION       1u
-#define CY_IP_M0S8SCB                   1u
-#define CY_IP_M0S8SCB_INSTANCES         4u
-#define CY_IP_M0S8SCB_VERSION           2u
-#define CY_IP_S8SRSSLT                  1u
-#define CY_IP_S8SRSSLT_INSTANCES        1u
-#define CY_IP_S8SRSSLT_VERSION          1u
-#define CY_IP_M0S8TCPWM                 1u
-#define CY_IP_M0S8TCPWM_INSTANCES       1u
-#define CY_IP_M0S8TCPWM_VERSION         2u
-#define CY_IP_M0S8WCO                   1u
-#define CY_IP_M0S8WCO_INSTANCES         1u
-#define CY_IP_M0S8WCO_VERSION           1u
-
-#include "psoc4100sp_config.h"
-#include "gpio_psoc4100sp_48_tqfp.h"
+#include "psoc4200m_config.h"
 
 #define CY_DEVICE_PSOC4AS3
 #define CY_SILICON_ID                   0x259511B5UL
@@ -190,10 +130,7 @@ typedef enum {
 
 #define PERI_BASE                               0x40010000UL
 #define PERI                                    ((PERI_Type*) PERI_BASE)                                          /* 0x40010000 */
-#define PERI_TR_GROUP0                          ((PERI_TR_GROUP_Type*) &PERI->TR_GROUP[0])                        /* 0x40012000 */
-#define PERI_TR_GROUP1                          ((PERI_TR_GROUP_Type*) &PERI->TR_GROUP[1])                        /* 0x40012200 */
-#define PERI_TR_GROUP2                          ((PERI_TR_GROUP_Type*) &PERI->TR_GROUP[2])                        /* 0x40012400 */
-#define PERI_TR_GROUP3                          ((PERI_TR_GROUP_Type*) &PERI->TR_GROUP[3])                        /* 0x40012600 */
+#define PERI_TR_GROUP                           ((PERI_TR_GROUP_Type*) &PERI->TR_GROUP[0])                        /* 0x40012000 */
 
 /*******************************************************************************
 *                                    HSIOM
@@ -214,7 +151,7 @@ typedef enum {
 *                                    SRSSLT
 *******************************************************************************/
 
-#define SRSSLT_BASE                             0x40030000UL
+#define SRSSLT_BASE                             0x400B0000UL
 #define SRSSLT                                  ((SRSSLT_Type*) SRSSLT_BASE)                                      /* 0x40030000 */
 
 /*******************************************************************************
@@ -231,16 +168,6 @@ typedef enum {
 #define GPIO_PRT5                               ((GPIO_PRT_Type*) &GPIO->PRT[5])                                  /* 0x40040500 */
 #define GPIO_PRT6                               ((GPIO_PRT_Type*) &GPIO->PRT[6])                                  /* 0x40040600 */
 #define GPIO_PRT7                               ((GPIO_PRT_Type*) &GPIO->PRT[7])                                  /* 0x40040700 */
-
-/*******************************************************************************
-*                                    PRGIO
-*******************************************************************************/
-
-#define PRGIO_BASE                              0x40050000UL
-#define PRGIO                                   ((PRGIO_Type*) PRGIO_BASE)                                        /* 0x40050000 */
-#define PRGIO_PRT0                              ((PRGIO_PRT_Type*) &PRGIO->PRT[0])                                /* 0x40050000 */
-#define PRGIO_PRT1                              ((PRGIO_PRT_Type*) &PRGIO->PRT[1])                                /* 0x40050100 */
-#define PRGIO_PRT2                              ((PRGIO_PRT_Type*) &PRGIO->PRT[2])                                /* 0x40050200 */
 
 /*******************************************************************************
 *                                    CPUSS
@@ -309,61 +236,61 @@ typedef enum {
 /*******************************************************************************
 *                                     CSD
 *******************************************************************************/
+// wrong version csd
+// #define CSD0_BASE                               0x40290000UL
+// #define CSD0                                    ((CSD_Type*) CSD0_BASE)                                           /* 0x40290000 */
 
-#define CSD0_BASE                               0x40290000UL
-#define CSD0                                    ((CSD_Type*) CSD0_BASE)                                           /* 0x40290000 */
+// /*******************************************************************************
+// *                                     LCD
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                     LCD
-*******************************************************************************/
+// #define LCD_BASE                                0x402A0000UL
+// #define LCD                                     ((LCD_Type*) LCD_BASE)                                            /* 0x402A0000 */
 
-#define LCD_BASE                                0x402A0000UL
-#define LCD                                     ((LCD_Type*) LCD_BASE)                                            /* 0x402A0000 */
+// /*******************************************************************************
+// *                                    LPCOMP
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                    LPCOMP
-*******************************************************************************/
+// #define LPCOMP_BASE                             0x402B0000UL
+// #define LPCOMP                                  ((LPCOMP_Type*) LPCOMP_BASE)                                      /* 0x402B0000 */
 
-#define LPCOMP_BASE                             0x402B0000UL
-#define LPCOMP                                  ((LPCOMP_Type*) LPCOMP_BASE)                                      /* 0x402B0000 */
+// /*******************************************************************************
+// *                                    CRYPTO
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                    CRYPTO
-*******************************************************************************/
+// #define CRYPTO_BASE                             0x402C0000UL
+// #define CRYPTO                                  ((CRYPTO_Type*) CRYPTO_BASE)                                      /* 0x402C0000 */
 
-#define CRYPTO_BASE                             0x402C0000UL
-#define CRYPTO                                  ((CRYPTO_Type*) CRYPTO_BASE)                                      /* 0x402C0000 */
+// /*******************************************************************************
+// *                                     EXCO
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                     EXCO
-*******************************************************************************/
+// #define EXCO_BASE                               0x402F0000UL
+// #define EXCO                                    ((EXCO_Type*) EXCO_BASE)                                          /* 0x402F0000 */
 
-#define EXCO_BASE                               0x402F0000UL
-#define EXCO                                    ((EXCO_Type*) EXCO_BASE)                                          /* 0x402F0000 */
+// /*******************************************************************************
+// *                                     CTBM
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                     CTBM
-*******************************************************************************/
+// #define CTBM0_BASE                              0x40300000UL
+// #define CTBM0                                   ((CTBM_Type*) CTBM0_BASE)                                         /* 0x40300000 */
 
-#define CTBM0_BASE                              0x40300000UL
-#define CTBM0                                   ((CTBM_Type*) CTBM0_BASE)                                         /* 0x40300000 */
+// /*******************************************************************************
+// *                                     SAR
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                     SAR
-*******************************************************************************/
+// #define SAR0_BASE                               0x403A0000UL
+// #define SAR0                                    ((SAR_Type*) SAR0_BASE)                                           /* 0x403A0000 */
 
-#define SAR0_BASE                               0x403A0000UL
-#define SAR0                                    ((SAR_Type*) SAR0_BASE)                                           /* 0x403A0000 */
+// /*******************************************************************************
+// *                                     PASS
+// *******************************************************************************/
 
-/*******************************************************************************
-*                                     PASS
-*******************************************************************************/
+// #define PASS0_BASE                              0x403F0000UL
+// #define PASS0                                   ((PASS_Type*) PASS0_BASE)                                         /* 0x403F0000 */
+// #define PASS0_DSAB                              ((PASS_DSAB_Type*) &PASS0->DSAB)                                  /* 0x403F0E00 */
 
-#define PASS0_BASE                              0x403F0000UL
-#define PASS0                                   ((PASS_Type*) PASS0_BASE)                                         /* 0x403F0000 */
-#define PASS0_DSAB                              ((PASS_DSAB_Type*) &PASS0->DSAB)                                  /* 0x403F0E00 */
 
-/** \} CY8C4247AZI-M485 */
 
 #endif /* _CY8C4247AZI_M485_H_ */
 
